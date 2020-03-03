@@ -153,6 +153,57 @@ body{
   padding: 0 10px;
 }
 
+/* PARTE DEI MESSAGGI */
+.right .main{
+  width: 100%;
+  height: 460px;
+  background: green;
+  background: rgb(76,209,55);
+  background: linear-gradient(347deg, rgba(76,209,55,1) 0%, rgba(220,221,225,1) 100%);
+  background-attachment: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FINE PARTE DEI MESSAGGI */
+
+/* PARTE BOTTOM DEI MESSAGGI */
+.right .msg{
+  width: 100%;
+  height: 70px;
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+}
+.right .msg input{
+  width: 80%;
+  height: 60%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FINE PARTE BOTTOM DEI MESSAGGI */
+
 
 
 
