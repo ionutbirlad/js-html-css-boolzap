@@ -101,6 +101,9 @@ body{
   width: 100%;
   height: 70px;
   background: brown;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .left .contatti .item img,
 .left .contatti .item .nm,
@@ -110,26 +113,8 @@ body{
 .left .contatti .item img{
   width: 60px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FINE LEFT SIDE */
+
 
 /* RIGHT SIDE */
 .wrapper .right{
@@ -138,6 +123,52 @@ body{
   float: right;
   background: #fff;
 }
+.wrapper .right .top{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightblue;
+}
+.wrapper .right .top .lft{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .right .top img,
+.wrapper .right .top .nm{
+  float: left;
+}
+.wrapper .right .top img{
+  width: 60px;
+}
+.wrapper .right .top .nm{
+
+}
+.wrapper .right .top .rgt i{
+  float: left;
+  font-size: 20px;
+  line-height: 70px;
+  padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
