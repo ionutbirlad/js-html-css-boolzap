@@ -19,15 +19,20 @@ body{
   max-width: 1200px;
 }
 
+i{
+  cursor: pointer;
+  color: #00000090;
+}
+
 /* Parte inerente al back che si intravede */
 .band{
   height: 15vh;
-  background: #27ae60;
+  background: #2ecc71;
 }
 
 .block{
   height: 85vh;
-  background: #dcdde1;
+  background: #bdc3c7;
 }
 /* Fine parte inerente al back che si intravede */
 
@@ -52,40 +57,40 @@ body{
   height: 100%;
   float: left;
   background: #fff;
-  border: 1px solid #000000;
 }
 
 .left .top{
   width: 100%;
   height: 70px;
-  background: yellow;
+  background: #ecf0f1;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-right: 1px solid #000000;
 }
 .left .top .lft{
-  background: orange;
+
 }
 .left .top img{
   width: 60px;
 }
 .left .top .rgt{
   height: 100%;
-  background: pink;
 }
 .left .top .rgt i{
   float: left;
   line-height: 70px;
-  padding: 0 10px;
+  margin: 0 10px;
   font-size: 20px;
 }
 .left .search{
   width: 100%;
   height: 40px;
-  background: blue;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff;
 }
 .left .search input{
   width: 95%;
@@ -94,16 +99,25 @@ body{
 .left .contatti{
   width: 100%;
   height: 490px;
-  background: red;
-  overflow: auto;
+  background: #fff;
+  overflow-y: auto;
 }
+
+.contatti::-webkit-scrollbar{
+  width: 1rem;
+}
+
 .left .contatti .item{
   width: 100%;
   height: 70px;
-  background: brown;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 10px 0 20px;
+}
+.left .contatti .item:hover{
+  background: #ecf0f1;
 }
 .left .contatti .item img,
 .left .contatti .item .nm,
@@ -129,7 +143,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: lightblue;
+  background: #ecf0f1;
+  padding: 0 10px;
 }
 .wrapper .right .top .lft{
   display: flex;
@@ -144,22 +159,24 @@ body{
   width: 60px;
 }
 .wrapper .right .top .nm{
-
+  padding-left: 20px;
 }
 .wrapper .right .top .rgt i{
   float: left;
   font-size: 20px;
   line-height: 70px;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
 /* PARTE DEI MESSAGGI */
 .right .main{
   width: 100%;
   height: 460px;
-  background: green;
-  background: rgb(76,209,55);
-  background: linear-gradient(347deg, rgba(76,209,55,1) 0%, rgba(220,221,225,1) 100%);
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: rgb(76,209,55);
+  background: linear-gradient(347deg, rgba(76,209,55,1) 0%, rgba(220,221,225,1) 100%); */
   background-attachment: fixed;
   padding: 30px 0;
 }
@@ -175,28 +192,28 @@ body{
   min-width: 90px;
   min-height: 50px;
   padding: 8px;
-  background: green;
+  background: #2ecc7180;
   border-radius: 10px;
   margin-left: auto;
   -webkit-box-shadow: 3px 3px 5px 2px #00000090;
   -moz-box-shadow: 3px 3px 5px 2px #00000090;
   box-shadow: 3px 3px 5px 2px #00000090;
 }
-.right .main .row .sent p{
-  text-align: right;
+.right .main .row .sent small{
+
 }
 .right .main .row .received{
   min-width: 90px;
   min-height: 50px;
   padding: 8px;
-  background: green;
+  background: #ffffff80;
   border-radius: 10px;
   -webkit-box-shadow: 3px 3px 5px 2px #00000090;
   -moz-box-shadow: 3px 3px 5px 2px #00000090;
   box-shadow: 3px 3px 5px 2px #00000090;
 }
-.right .main .row .received p{
-  text-align: right;
+.right .main .row .received small{
+
 }
 
 
@@ -216,7 +233,7 @@ body{
 .right .msg{
   width: 100%;
   height: 70px;
-  background: yellow;
+  background: #ecf0f1;
   display: flex;
   align-items: center;
   justify-content: space-around;
