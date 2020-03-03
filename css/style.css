@@ -5,6 +5,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body{
+  position: relative;
+}
+
 .clearfix::after{
   content: "";
   display: table;
@@ -14,3 +18,31 @@
 .container{
   max-width: 1200px;
 }
+
+/* Parte inerente al back che si intravede */
+.band{
+  height: 15vh;
+  background: #27ae60;
+}
+
+.block{
+  height: 85vh;
+  background: #dcdde1;
+}
+/* Fine parte inerente al back che si intravede */
+
+/* Parte della app */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fine parte della app */
