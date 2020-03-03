@@ -178,9 +178,12 @@ body{
   background: green;
   border-radius: 10px;
   margin-left: auto;
-  -webkit-box-shadow: 3px 3px 5px 6px #000000;
-  -moz-box-shadow:    3px 3px 5px 6px #000000;
-  box-shadow:         3px 3px 5px 6px #000000;
+  -webkit-box-shadow: 3px 3px 5px 2px #00000090;
+  -moz-box-shadow: 3px 3px 5px 2px #00000090;
+  box-shadow: 3px 3px 5px 2px #00000090;
+}
+.right .main .row .sent p{
+  text-align: right;
 }
 .right .main .row .received{
   min-width: 90px;
@@ -188,9 +191,12 @@ body{
   padding: 8px;
   background: green;
   border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 5px 6px #000000;
-  -moz-box-shadow:    3px 3px 5px 6px #000000;
-  box-shadow:         3px 3px 5px 6px #000000;
+  -webkit-box-shadow: 3px 3px 5px 2px #00000090;
+  -moz-box-shadow: 3px 3px 5px 2px #00000090;
+  box-shadow: 3px 3px 5px 2px #00000090;
+}
+.right .main .row .received p{
+  text-align: right;
 }
 
 
