@@ -32,7 +32,27 @@ body{
 /* Fine parte inerente al back che si intravede */
 
 /* Parte della app */
-
+.wrapper{
+  position: absolute;
+  width: 1100px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper .left{
+  width: 35%;
+  height: 100%;
+  float: left;
+  background: #fff;
+  border: 1px solid #000000;
+}
+.wrapper .right{
+  width: 65%;
+  height: 100%;
+  float: right;
+  background: #fff;
+}
 
 
 
