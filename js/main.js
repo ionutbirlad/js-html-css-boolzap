@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   // Scroll down automatico
   $(".main").animate({
               scrollTop: $(
@@ -54,6 +54,17 @@ $(document).ready(function() {
           $(this).parents(".contatti .item").hide("fast");
         }
       });
+    });
+
+
+    $(".fas.fa-microphone").click(function() {
+      $(this).hide();
+      $(".fas.fa-paper-plane").show();
+    });
+
+    $(".fas.fa-paper-plane").mouseleave(function() {
+      $(this).hide();
+      $(".fas.fa-microphone").show();
     });
 
 
