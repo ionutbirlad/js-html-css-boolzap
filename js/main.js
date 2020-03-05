@@ -56,7 +56,7 @@ $(document).ready(function() {
       });
     });
 
-    
+
     $(".fas.fa-microphone").click(function() {
       $(this).hide();
       $(".fas.fa-paper-plane").show();
@@ -65,6 +65,11 @@ $(document).ready(function() {
     $(".fas.fa-paper-plane").mouseleave(function() {
       $(this).hide();
       $(".fas.fa-microphone").show();
+    });
+
+    // emoticons
+    $(".far.fa-smile").click(function() {
+      $(".emtc .emoticons").toggle();
     });
 
 

@@ -368,3 +368,34 @@ i{
 /* FINE RIGHT SIDE */
 
 /* Fine parte della app */
+
+.far .fa-smile{
+  position: relative;
+}
+
+.emtc{
+  list-style: none;
+}
+
+.emoticons{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background: #fff;
+  top: 300px;
+  z-index: 9999;
+  border-radius: 10px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoticons::after{
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  z-index: 9999;
+  position: absolute;
+  transform: translate(-230px, 108px) rotate(45deg);
+}
