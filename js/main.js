@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  
+  // Scroll down automatico
+  $(".main").animate({
+              scrollTop: $(
+                '.main').get(0).scrollHeight
+          }, 1000);
 
   var time = new Date();
   var hours = time.getHours()
