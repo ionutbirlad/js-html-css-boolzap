@@ -72,6 +72,23 @@ $(document).ready(function() {
       $(".emtc .emoticons").toggle();
     });
 
+    // ricerca chat
+    $(".fas.fa-search").click(function() {
+      $(".is .cerca").toggle();
+    });
+
+    $(".cerca input").keyup(function(event) {
+      var carattereImmesso = $(this).val().toLowerCase();
+      // console.log(carattereInserito);
+      $(".main .row").each(function() {
+        if ($(this).text().toLowerCase().includes(carattereImmesso)) {
+          $(this).show("fast");
+        } else {
+          $(this).hide("fast");
+        }
+      });
+    });
+
 
 
 

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  list-style: none;
 }
 
 body{
@@ -253,6 +254,48 @@ i{
   font-size: 20px;
   line-height: 70px;
   margin: 0 10px;
+}
+
+
+.is{
+  list-style: none;
+}
+.is li{
+  display: inline-block;
+}
+.fas.fa-search{
+  position: relative;
+}
+
+.cerca{
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  background: #fff;
+  top: 80px;
+  left: 750px;
+  z-index: 9999;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+}
+.cerca input{
+  width: 250px;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.cerca::after{
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  z-index: 9998;
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  transform: rotate(45deg);
 }
 
 /* PARTE DEI MESSAGGI */
