@@ -354,21 +354,9 @@ i{
   border: none;
   padding: 0 10px;
 }
-
-
-
-
 .right .msg .fas.fa-paper-plane{
   display: none;
 }
-
-/* .right .msg .fas.fa-microphone:hover .right .msg .fas.fa-paper-plane{
-  display: block;
-} */
-
-
-
-
 .right .main .template{
   display: none;
 }

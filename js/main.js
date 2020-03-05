@@ -56,7 +56,7 @@ $(document).ready(function() {
       });
     });
 
-
+    
     $(".fas.fa-microphone").click(function() {
       $(this).hide();
       $(".fas.fa-paper-plane").show();
