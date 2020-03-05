@@ -36,9 +36,9 @@ $(document).ready(function() {
       // console.log(carattereInserito);
       $(".contatti .item .nm h6").each(function() {
         if ($(this).text().toLowerCase().includes(carattereInserito)) {
-          $(this).parents(".contatti .item").show();
+          $(this).parents(".contatti .item").show("fast");
         } else {
-          $(this).parents(".contatti .item").hide();
+          $(this).parents(".contatti .item").hide("fast");
         }
       });
     });

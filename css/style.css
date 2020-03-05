@@ -200,6 +200,13 @@ i{
 .left .contatti .item img{
   width: 60px;
 }
+
+/* .contatti .item.vis{
+  display: flex;
+}
+.contatti .item.inv{
+  display: none;
+} */
 /* FINE LEFT SIDE */
 
 
@@ -330,10 +337,6 @@ i{
   display: none;
 }
 .right .main .template2{
-  display: none;
-}
-
-.item.inv{
   display: none;
 }
 /* FINE PARTE BOTTOM DEI MESSAGGI */
