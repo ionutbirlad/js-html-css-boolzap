@@ -69,12 +69,22 @@ $(document).ready(function() {
 
     // emoticons
     $(".far.fa-smile").click(function() {
-      $(".emtc .emoticons").toggle();
+      if ($(".emtc .emoticons").is(":visible")) {
+        $(".emtc .emoticons").toggle();
+      } else {
+        $(".is .cerca").hide();
+        $(".emtc .emoticons").toggle();
+      }
     });
 
     // ricerca chat
     $(".fas.fa-search").click(function() {
-      $(".is .cerca").toggle();
+      if ($(".is .cerca").is(":visible")) {
+        $(".is .cerca").toggle();
+      } else {
+        $(".emtc .emoticons").hide();
+        $(".is .cerca").toggle();
+      }
     });
 
     $(".cerca input").keyup(function(event) {
