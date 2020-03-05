@@ -14,13 +14,14 @@ $(document).ready(function() {
         // $('.lista-nomi').append('<div>' + nomeInput + '</div>');
         var messaggio = $('.template .row').clone(); // Copia del contenuto del messaggio che è dentro al template (display none nel nostro CSS)
         messaggio.find('.sent .testo-messaggio').text(nomeInput); // Modifico il testo messaggio nel messaggio
-        messaggio.find('.orario').text(hours + ":" + min);
+        messaggio.find('.orario').text(new Date().getHours() + ":" + new Date().getMinutes());
         $('.main').append(messaggio); // Aggiungo in fondo alla lista nomi il messaggio
 
         // Ricevimento del messaggio dopo 1 secondo
         setTimeout(function() {
           var messaggioDiRisposta = $('.template2 .row').clone();
           messaggioDiRisposta.find('.received .testo-messaggio').text("ok");
+          messaggioDiRisposta.find('.orario').text(new Date().getHours() + ":" + new Date().getMinutes());
           $('.main').append(messaggioDiRisposta);
 
           // Scroll down automatico ==> da migliorare
