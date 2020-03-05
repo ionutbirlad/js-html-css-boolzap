@@ -286,10 +286,13 @@ i{
   -webkit-box-shadow: 3px 3px 5px 2px #00000090;
   -moz-box-shadow: 3px 3px 5px 2px #00000090;
   box-shadow: 3px 3px 5px 2px #00000090;
+  display: flex;
+  flex-direction: column;
 }
 .right .main .row .sent small{
   font-size: 11px;
   color: #00000090;
+  align-self: flex-end;
 }
 .right .main .row .received{
   min-width: 90px;
@@ -300,10 +303,13 @@ i{
   -webkit-box-shadow: 3px 3px 5px 2px #00000090;
   -moz-box-shadow: 3px 3px 5px 2px #00000090;
   box-shadow: 3px 3px 5px 2px #00000090;
+  display: flex;
+  flex-direction: column;
 }
 .right .main .row .received small{
   font-size: 11px;
   color: #00000090;
+  align-self: flex-end;
 }
 /* FINE PARTE DEI MESSAGGI */
 
