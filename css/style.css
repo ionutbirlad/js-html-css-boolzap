@@ -317,6 +317,18 @@ i{
   border: none;
   padding: 0 10px;
 }
+
+/* .right .msg .fas.fa-paper-plane{
+  display: none;
+}
+
+.right .msg .fas.fa-microphone:hover > .fas.fa-paper-plane{
+  display: block;
+} */
+
+.right .main .template{
+  display: none;
+}
 /* FINE PARTE BOTTOM DEI MESSAGGI */
 
 /* FINE RIGHT SIDE */
