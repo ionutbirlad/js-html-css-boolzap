@@ -26,13 +26,22 @@ $(document).ready(function() {
           // Scroll down automatico ==> da migliorare
           $(".main").animate({ scrollTop: "300px" });
         }, 1000);
-        
+
         // Scroll down automatico ==> da migliorare
         $(".main").animate({ scrollTop: "300px" });
-
     });
 
-
+    $(".search-txt").keyup(function(event) {
+      var carattereInserito = $(this).val().toLowerCase();
+      // console.log(carattereInserito);
+      $(".contatti .item .nm h6").each(function() {
+        if ($(this).text().toLowerCase().includes(carattereInserito)) {
+          $(this).parents(".contatti .item").show();
+        } else {
+          $(this).parents(".contatti .item").hide();
+        }
+      });
+    });
 
 
 

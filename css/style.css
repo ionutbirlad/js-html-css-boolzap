@@ -332,6 +332,10 @@ i{
 .right .main .template2{
   display: none;
 }
+
+.item.inv{
+  display: none;
+}
 /* FINE PARTE BOTTOM DEI MESSAGGI */
 
 /* FINE RIGHT SIDE */
