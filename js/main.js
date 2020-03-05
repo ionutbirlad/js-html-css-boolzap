@@ -25,11 +25,17 @@ $(document).ready(function() {
           $('.main').append(messaggioDiRisposta);
 
           // Scroll down automatico ==> da migliorare
-          $(".main").animate({ scrollTop: "300px" });
+          $(".main").animate({
+                      scrollTop: $(
+                        '.main').get(0).scrollHeight
+                  }, 1000);
         }, 1000);
 
         // Scroll down automatico ==> da migliorare
-        $(".main").animate({ scrollTop: "300px" });
+        $(".main").animate({
+                    scrollTop: $(
+                      '.main').get(0).scrollHeight
+                }, 1000);
     });
 
     $(".search-txt").keyup(function(event) {
