@@ -31,6 +31,7 @@ $(document).ready(function() {
           $(this).addClass("active");
           $(".right .top .lft").find("img").attr("src", img);
           $(".right .top .lft").find("h6").text(nome);
+          $(".right .top .lft").find(".accesso").val(ultimoAccesso);
         }
       });
     });
