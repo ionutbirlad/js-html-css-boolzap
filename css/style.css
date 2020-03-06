@@ -79,9 +79,6 @@ i{
   justify-content: space-between;
   border-right: 1px solid #000000;
 }
-.left .top .lft{
-
-}
 .left .top img{
   width: 60px;
 }
@@ -201,13 +198,6 @@ i{
 .left .contatti .item img{
   width: 60px;
 }
-
-/* .contatti .item.vis{
-  display: flex;
-}
-.contatti .item.inv{
-  display: none;
-} */
 /* FINE LEFT SIDE */
 
 
@@ -255,7 +245,6 @@ i{
   line-height: 70px;
   margin: 0 10px;
 }
-
 
 .is{
   list-style: none;
@@ -305,8 +294,6 @@ i{
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* background: rgb(76,209,55);
-  background: linear-gradient(347deg, rgba(76,209,55,1) 0%, rgba(220,221,225,1) 100%); */
   background-attachment: fixed;
   padding: 30px 0;
   overflow: auto;
