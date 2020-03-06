@@ -172,6 +172,7 @@ i{
   align-items: center;
   justify-content: space-between;
   padding: 0 10px 0 20px;
+  cursor: pointer;
 }
 .left .contatti .item:hover{
   background: #ecf0f1;
@@ -297,6 +298,10 @@ i{
   background-attachment: fixed;
   padding: 30px 0;
   overflow: auto;
+  display: none;
+}
+.right .main.active{
+  display: block;
 }
 
 .right .main .row{

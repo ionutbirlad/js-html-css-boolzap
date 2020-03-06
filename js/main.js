@@ -19,6 +19,24 @@ $(document).ready(function() {
   // Fine ricerca CONTATTI
 
 
+  // Selezione CONVERSAZIONI
+    $(".item").click(function() {
+      var nome = $(this).find("h6").text();
+      var img = $(this).children("img").attr("src");
+      console.log(img);
+      var utente = $(this).data("conversazione");
+      $(".main").each(function() {
+        if (utente == $(this).data("conversazione")) {
+          $(".main").removeClass("active");
+          $(this).addClass("active");
+          $(".right .top .lft").find("img").attr("src", img);
+          $(".right .top .lft").find("h6").text(nome);
+        }
+      });
+    });
+  // Fine selezione CONVERSAZIONI
+
+
   // Ricerca MESSAGGI
     $(".cerca input").keyup(function(event) {
       var carattereImmesso = $(this).val().toLowerCase();
@@ -102,7 +120,7 @@ $(document).ready(function() {
       templateClone.find(".message-text").text(text);
       templateClone.find(".message-time").text(new Date().getHours() + ":" + new Date().getMinutes());
       templateClone.children(".message").addClass(sentReceived);
-      $(".main").append(templateClone);
+      $(".main.active").append(templateClone);
     }
 
   // Funzione generica per lo scroll totale
