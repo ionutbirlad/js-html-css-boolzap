@@ -1,49 +1,36 @@
 $(document).ready(function() {
 
   // Scroll down automatico
-  $(".main").animate({
-              scrollTop: $(
-                '.main').get(0).scrollHeight
-          }, 1000);
+  scroll(".main");
+  // Fine scroll down automatico
 
+  //
   var time = new Date();
   var hours = time.getHours()
   var min = time.getMinutes()
-  // var n = d.toLocaleTimeString();
 
-  $('.fa-paper-plane').click(function(){
-        var nomeInput = $('#msg').val();
-        $('#msg').val('');
-        // $('#nome-utente').html('<span class="rosso">' + nomeInput + '</span>');
-        // $('#nome-utente').text('<span class="rosso">' + nomeInput + '</span>');
-        // $('#nome-utente').text(nomeInput).attr('class', 'rosso').css('background-color', 'yellow');
-        // $('.lista-nomi').append('<div>' + nomeInput + '</div>');
-        var messaggio = $('.template .row').clone(); // Copia del contenuto del messaggio che è dentro al template (display none nel nostro CSS)
-        messaggio.find('.sent .testo-messaggio').text(nomeInput); // Modifico il testo messaggio nel messaggio
-        messaggio.find('.orario').text(new Date().getHours() + ":" + new Date().getMinutes());
-        $('.main').append(messaggio); // Aggiungo in fondo alla lista nomi il messaggio
 
-        // Ricevimento del messaggio dopo 1 secondo
-        setTimeout(function() {
-          var messaggioDiRisposta = $('.template2 .row').clone();
-          messaggioDiRisposta.find('.received .testo-messaggio').text("ok");
-          messaggioDiRisposta.find('.orario').text(new Date().getHours() + ":" + new Date().getMinutes());
-          $('.main').append(messaggioDiRisposta);
 
-          // Scroll down automatico ==> da migliorare
-          $(".main").animate({
-                      scrollTop: $(
-                        '.main').get(0).scrollHeight
-                  }, 1000);
-        }, 1000);
+  // Parte GESTIONE MESSAGGI
+  $(".msg .ir").click(function() {
+    textSend();
+  });
+  $("#msg").keypress(function(event) {
+    if (event.keyCode == 13) {
+      textSend();
+    }
+  });
+  // Fine parte GESTIONE MESSAGGI
 
-        // Scroll down automatico ==> da migliorare
-        $(".main").animate({
-                    scrollTop: $(
-                      '.main').get(0).scrollHeight
-                }, 1000);
-    });
+  // FOCUS/BLUR messaggi
+  $("#msg").focus(function() {
+    $(".ir").children("i").toggleClass("fas fa-microphone fas fa-paper-plane");
+  }).blur(function() {
+    $(".ir").children("i").toggleClass("fas fa-microphone fas fa-paper-plane");
+  });
+  // Fine FOCUS/BLUR messaggi
 
+// Ricerca CONTATTI
     $(".search-txt").keyup(function(event) {
       var carattereInserito = $(this).val().toLowerCase();
       // console.log(carattereInserito);
@@ -55,17 +42,12 @@ $(document).ready(function() {
         }
       });
     });
+// Fine ricerca CONTATTI
 
 
-    $(".fas.fa-microphone").click(function() {
-      $(this).hide();
-      $(".fas.fa-paper-plane").show();
-    });
 
-    $(".fas.fa-paper-plane").mouseleave(function() {
-      $(this).hide();
-      $(".fas.fa-microphone").show();
-    });
+
+
 
     // emoticons
     $(".far.fa-smile").click(function() {
@@ -100,6 +82,59 @@ $(document).ready(function() {
     });
 
 
+
+
+
+// Parte delle FUNZIONI
+
+// Funzione per l'invio dei messaggi
+function textSend() {
+  var messaggioInserito = $("#msg").val();
+  console.log(messaggioInserito);
+  if (messaggioInserito.trim().length > 0) {
+    $("#msg").val("");
+    messageGenerator(messaggioInserito, "sent");
+    scroll(".main");
+    setTimeout(function() {
+      messageGenerator("ok", "received");
+      scroll(".main");
+    }, 1000);
+  }
+}
+
+// Funzione per creare il messaggio
+function messageGenerator(text, sentReceived) {
+  var templateClone = $(".template .row").clone();
+  templateClone.find(".message-text").text(text);
+  templateClone.find(".message-time").text(new Date().getHours() + ":" + new Date().getMinutes());
+  templateClone.children(".message").addClass(sentReceived);
+  $(".main").append(templateClone);
+}
+
+// Funzione generica per lo scroll totale
+
+// Alternativa di Luca
+
+/*
+function scroll(yourDiv) {
+  var pixelScroll = $(yourDiv).height();
+  $(yourDiv).scrollTop(pixelScroll);
+}
+*/
+
+// Alternativa con animazione
+function scroll(yourDiv) {
+  $(yourDiv).animate({scrollTop:
+   $(yourDiv).get(0).scrollHeight
+  }, 1000);
+}
+
+
+
+
+
+
+// Fine parte delle FUNZIONI
 
 
 

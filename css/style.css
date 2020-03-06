@@ -314,8 +314,7 @@ i{
 
 .right .main .row{
   width: 100%;
-  height: 70px;
-  padding: 0 40px;
+  padding: 10px 40px;
   display: flex;
   align-items: center;
 }
@@ -397,13 +396,7 @@ i{
   border: none;
   padding: 0 10px;
 }
-.right .msg .fas.fa-paper-plane{
-  display: none;
-}
 .right .main .template{
-  display: none;
-}
-.right .main .template2{
   display: none;
 }
 /* FINE PARTE BOTTOM DEI MESSAGGI */
