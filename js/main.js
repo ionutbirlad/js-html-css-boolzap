@@ -67,12 +67,12 @@ $(document).ready(function() {
 
     // OPZIONI MESSAGGIO
       // Questo mi serve per attivare al click anche gli elementi generati dall'utente
-      $(".main.active").on('click', ".opt", function() {
+      $(".main").on('click', ".opt", function() {
 
         if ($(this).find(".message-options-panel").hasClass("options-active")) {
           $(this).find(".message-options-panel").removeClass("options-active");
         } else {
-          $(".main.active .message-options-panel").removeClass("options-active");
+          $(".main .message-options-panel").removeClass("options-active");
           $(this).find(".message-options-panel").toggleClass("options-active");
         }
 
