@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Scroll down automatico
-    scroll(".main");
+    scroll(".main.active");
   // Fine scroll down automatico
 
 
@@ -124,10 +124,10 @@ $(document).ready(function() {
       if (messaggioInserito.trim().length > 0) {
         $("#msg").val("");
         messageGenerator(messaggioInserito, "sent");
-        scroll(".main");
+        scroll(".main.active");
         setTimeout(function() {
           messageGenerator("ok", "received");
-          scroll(".main");
+          scroll(".main.active");
         }, 1000);
       }
     }
