@@ -66,6 +66,7 @@ $(document).ready(function() {
     });
 
     // OPZIONI MESSAGGIO
+      // Questo mi serve per attivare al click anche gli elementi generati dall'utente
       $(".main.active").on('click', ".opt", function() {
 
         if ($(this).find(".message-options-panel").hasClass("options-active")) {
@@ -77,7 +78,7 @@ $(document).ready(function() {
 
       })
     // FINE OPZIONI MESSAGGIO
-    
+
   // Fine parte GESTIONE MESSAGGI
 
   // FOCUS/BLUR messaggi
