@@ -339,6 +339,16 @@ i{
   font-size: 11px;
   color: #00000090;
   align-self: flex-end;
+  padding-top: 15px;
+}
+.right .main .row .sent .fa.fa-chevron-down{
+  text-align: right;
+  align-self: flex-end;
+  transform: scale(0);
+}
+.right .main .row .sent:hover .fa.fa-chevron-down{
+  transform: scale(1);
+  position: relative;
 }
 .right .main .row .received{
   position: relative;
@@ -368,6 +378,81 @@ i{
   font-size: 11px;
   color: #00000090;
   align-self: flex-end;
+  padding-top: 15px;
+}
+.right .main .row .received .fa.fa-chevron-down{
+  text-align: right;
+  align-self: flex-end;
+  transform: scale(0);
+  position: relative;
+}
+.right .main .row .received:hover .fa.fa-chevron-down{
+  transform: scale(1);
+}
+
+
+.sent .message-options-panel{
+  position: absolute;
+  background: #fff;
+  color: #000000;
+  width: 200px;
+  height: 100px;
+  bottom: -120%;
+  right: 0%;
+  font-size: 15px;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 10px;
+  z-index: 9999;
+}
+.sent .message-options-panel::before{
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: inherit;
+  transform: rotate(45deg);
+  top: -12%;
+  right: 8px;
+  position: absolute;
+  z-index: -9999;
+}
+.received .message-options-panel{
+  position: absolute;
+  background: #fff;
+  color: #000000;
+  width: 200px;
+  height: 100px;
+  bottom: -120%;
+  right: -180%;
+  font-size: 15px;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 10px;
+  z-index: 9999;
+}
+.received .message-options-panel::before{
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: inherit;
+  transform: rotate(45deg);
+  top: -12%;
+  left: 8px;
+  position: absolute;
+  z-index: -9999;
+}
+
+.message-options-panel.options-active{
+  display: flex;
+}
+
+
+.opt{
+  text-align: right;
 }
 /* FINE PARTE DEI MESSAGGI */
 

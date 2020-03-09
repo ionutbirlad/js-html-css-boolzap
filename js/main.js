@@ -23,15 +23,17 @@ $(document).ready(function() {
     $(".item").click(function() {
       var nome = $(this).find("h6").text();
       var img = $(this).children("img").attr("src");
-      console.log(img);
+      // console.log(img);
       var utente = $(this).data("conversazione");
       $(".main").each(function() {
         if (utente == $(this).data("conversazione")) {
+          var ultimoAccesso = $(this).children(".main .active .row:last-child").find(".received .message-time").text();
+          console.log(ultimoAccesso);
           $(".main").removeClass("active");
           $(this).addClass("active");
           $(".right .top .lft").find("img").attr("src", img);
           $(".right .top .lft").find("h6").text(nome);
-          $(".right .top .lft").find(".accesso").val(ultimoAccesso);
+          $(".right .top .lft").find(".accesso").text(ultimoAccesso);
         }
       });
     });
@@ -62,6 +64,20 @@ $(document).ready(function() {
         textSend();
       }
     });
+
+    // OPZIONI MESSAGGIO
+      $(".main.active").on('click', ".opt", function() {
+
+        if ($(this).find(".message-options-panel").hasClass("options-active")) {
+          $(this).find(".message-options-panel").removeClass("options-active");
+        } else {
+          $(".main.active .message-options-panel").removeClass("options-active");
+          $(this).find(".message-options-panel").toggleClass("options-active");
+        }
+
+      })
+    // FINE OPZIONI MESSAGGIO
+    
   // Fine parte GESTIONE MESSAGGI
 
   // FOCUS/BLUR messaggi
