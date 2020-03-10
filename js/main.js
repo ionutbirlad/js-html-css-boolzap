@@ -19,6 +19,29 @@ $(document).ready(function() {
   // Fine ricerca CONTATTI
 
 
+  // AGGIUNTA CONTATTO
+    // Gestione click
+    $(".fas.fa-comment-alt").click(function() {
+      $(".aggiunta-contatto").toggle();
+    });
+    // Fine gestione click
+
+    // Gestione aggiunta
+    $("#aggiunta-contatto-text").keypress(function(event) {
+      if (event.keyCode == 13) {
+        var nomeContatto = $("#aggiunta-contatto-text").val();
+        // console.log(nomeContatto);
+        $("#aggiunta-contatto-text").val("");
+        $(".aggiunta-contatto").hide();
+        var cloneItem = $(".template-2 .item").clone();
+        cloneItem.find("h6").text(nomeContatto);
+        $(".left .contatti").append(cloneItem);
+      }
+    })
+    // Fine gestione aggiunta
+  // FINE AGGIUNTA CONTATTO
+
+
   // Selezione CONVERSAZIONI
     $(".item").click(function() {
       var nome = $(this).find("h6").text();
