@@ -29,13 +29,23 @@ $(document).ready(function() {
     // Gestione aggiunta
     $("#aggiunta-contatto-text").keypress(function(event) {
       if (event.keyCode == 13) {
-        var nomeContatto = $("#aggiunta-contatto-text").val();
+        var nomeContatto = $("#aggiunta-contatto-text").val().toLowerCase();
         // console.log(nomeContatto);
         $("#aggiunta-contatto-text").val("");
         $(".aggiunta-contatto").hide();
-        var cloneItem = $(".template-2 .item").clone();
-        cloneItem.find("h6").text(nomeContatto);
-        $(".left .contatti").append(cloneItem);
+        var sentinella = false;
+        $(".contatti .item").each(function() {
+          if ($(this).find("h6").text().toLowerCase().includes(nomeContatto)) {
+            sentinella = true;
+          }
+        })
+        if (sentinella == false) {
+          var cloneItem = $(".template-2 .item").clone();
+          cloneItem.find("h6").text(nomeContatto);
+          $(".left .contatti").append(cloneItem);
+        } else {
+          alert("Questo contatto è già presente nella rubrica");
+        }
       }
     })
     // Fine gestione aggiunta
@@ -51,7 +61,7 @@ $(document).ready(function() {
       $(".main").each(function() {
         if (utente == $(this).data("conversazione")) {
           var ultimoAccesso = $(this).children(".main .active .row:last-child").find(".received .message-time").text();
-          console.log(ultimoAccesso);
+          // console.log(ultimoAccesso);
           $(".main").removeClass("active");
           $(this).addClass("active");
           $(".right .top .lft").find("img").attr("src", img);
