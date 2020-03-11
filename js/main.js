@@ -165,7 +165,7 @@ $(document).ready(function() {
       }
     }
 
-  // Funzione per creare il messaggio
+  // Funzione per creare il messaggio 
     function messageGenerator(text, sentReceived) {
       var templateClone = $(".template .row").clone();
       templateClone.find(".message-text").text(text);
