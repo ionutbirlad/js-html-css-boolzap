@@ -40,9 +40,14 @@ $(document).ready(function() {
           }
         })
         if (sentinella == false) {
-          var cloneItem = $(".template-2 .item").clone();
-          cloneItem.find("h6").text(nomeContatto);
-          $(".left .contatti").append(cloneItem);
+          addContact(nomeContatto);
+
+          // VECCHIO METODO
+          // var cloneItem = $(".template-2 .item").clone();
+          // cloneItem.find("h6").text(nomeContatto);
+          // $(".left .contatti").append(cloneItem);
+          // VECCHIO METODO
+
         } else {
           alert("Questo contatto è già presente nella rubrica");
         }
@@ -168,7 +173,7 @@ $(document).ready(function() {
   // Funzione per creare il messaggio
 
     // HANDLEBARS
-    
+
     // DA RIPETERE SOLO UNA VOLTA
     var source = $("#template").html();
     var template = Handlebars.compile(source);
@@ -215,6 +220,22 @@ $(document).ready(function() {
        $(yourDiv).get(0).scrollHeight
       }, 1000);
     }
+
+
+    // Funzione per aggiungere nuovo contatto con Handlebars
+    // DA RIPETERE SOLO UNA VOLTA
+    var source2 = $("#template-2").html();
+    var templateItem = Handlebars.compile(source2);
+    // DA RIPETERE SOLO UNA VOLTA
+
+    function addContact(nm) {
+      var infoNuovoContatto = {
+        nome: nm
+      };
+      var templateCompiled = templateItem(infoNuovoContatto);
+      $(".left .contatti").append(templateCompiled);
+    }
+
 
   // Fine parte delle FUNZIONI
 
