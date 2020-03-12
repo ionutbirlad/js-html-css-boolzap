@@ -153,7 +153,7 @@ $(document).ready(function() {
   // Funzione per l'invio dei messaggi
     function textSend() {
       var messaggioInserito = $("#msg").val();
-      console.log(messaggioInserito);
+      // console.log(messaggioInserito);
       if (messaggioInserito.trim().length > 0) {
         $("#msg").val("");
         messageGenerator(messaggioInserito, "sent");
@@ -165,14 +165,38 @@ $(document).ready(function() {
       }
     }
 
-  // Funzione per creare il messaggio 
+  // Funzione per creare il messaggio
+
+    // HANDLEBARS
+    
+    // DA RIPETERE SOLO UNA VOLTA
+    var source = $("#template").html();
+    var template = Handlebars.compile(source);
+    // DA RIPETERE SOLO UNA VOLTA
+
     function messageGenerator(text, sentReceived) {
-      var templateClone = $(".template .row").clone();
-      templateClone.find(".message-text").text(text);
-      templateClone.find(".message-time").text(new Date().getHours() + ":" + new Date().getMinutes());
-      templateClone.children(".message").addClass(sentReceived);
-      $(".main.active").append(templateClone);
+      var infoMessaggio = {
+        direzione: sentReceived,
+        messaggio: text,
+        ora: new Date().getHours() + ":" + new Date().getMinutes()
+      };
+      var templateCompiled = template(infoMessaggio);
+      $(".main.active").append(templateCompiled);
     }
+    // HANDLEBARS
+
+    // METODO VECCHIO
+
+    // function messageGenerator(text, sentReceived) {
+    //   var templateClone = $(".template .row").clone();
+    //   templateClone.find(".message-text").text(text);
+    //   templateClone.find(".message-time").text(new Date().getHours() + ":" + new Date().getMinutes());
+    //   templateClone.children(".message").addClass(sentReceived);
+    //   $(".main.active").append(templateClone);
+    // }
+
+    // METODO VECCHIO
+
 
   // Funzione generica per lo scroll totale
 
