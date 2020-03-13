@@ -10,6 +10,11 @@ $(document).ready(function() {
   var templateItem = Handlebars.compile(source2);
   // DA RIPETERE SOLO UNA VOLTA
 
+  // DA RIPETERE SOLO UNA VOLTA ==> serve per la funzione addContact()
+  var source3 = $("#template-3").html();
+  var templateItem2 = Handlebars.compile(source3);
+  // DA RIPETERE SOLO UNA VOLTA
+
   // Scroll down automatico
     scroll(".main.active");
   // Fine scroll down automatico
@@ -53,6 +58,7 @@ $(document).ready(function() {
           var numConv = $(".item:last-child").data("conversazione");
           var conv = numConv + 1;
           addContact(nomeContatto, conv);
+          addChat(conv);
 
           // VECCHIO METODO
           // var cloneItem = $(".template-2 .item").clone();
@@ -70,7 +76,8 @@ $(document).ready(function() {
 
 
   // Selezione CONVERSAZIONI
-    $(".item").click(function() {
+    // $(".item").click(function() {
+    $(document).on("click", ".item", function() {
       var nome = $(this).find("h6").text();
       var img = $(this).children("img").attr("src");
       // console.log(img);
@@ -85,7 +92,7 @@ $(document).ready(function() {
           $(".right .top .lft").find("h6").text(nome);
           $(".right .top .lft").find(".accesso").text(ultimoAccesso);
         }
-      });
+    });
     });
   // Fine selezione CONVERSAZIONI
 
@@ -218,7 +225,7 @@ $(document).ready(function() {
 
     // OPZIONI MESSAGGIO
       // Questo mi serve per attivare al click anche gli elementi generati dall'utente
-      $(".main").on('click', ".opt", function() {
+      $(document).on('click', ".opt", function() {
 
         if ($(this).find(".message-options-panel").hasClass("options-active")) {
           $(this).find(".message-options-panel").removeClass("options-active");
@@ -333,14 +340,22 @@ $(document).ready(function() {
     // Funzione per aggiungere nuovo contatto con Handlebars
 
     function addContact(nm, conv) {
-
       var infoNuovoContatto = {
         nome: nm,
         itemId: conv
       };
-
       var templateCompiled = templateItem(infoNuovoContatto);
       $(".left .contatti").append(templateCompiled);
+    }
+
+    // Funzione per aggiungere nuova chat contestualmente all'aggiunta di un nuovo vontatto in rubrica
+    function addChat(id) {
+      var infoNuovaChat = {
+        chatId: id
+      };
+      var templateCompiled = templateItem2(infoNuovaChat);
+      // $(".right").append(templateCompiled);
+      $(templateCompiled).insertAfter($(".right .main"));
     }
 
   // Fine parte delle FUNZIONI
