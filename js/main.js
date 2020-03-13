@@ -50,7 +50,9 @@ $(document).ready(function() {
           }
         })
         if (sentinella == false) {
-          addContact(nomeContatto);
+          var numConv = $(".item:last-child").data("conversazione");
+          var conv = numConv + 1;
+          addContact(nomeContatto, conv);
 
           // VECCHIO METODO
           // var cloneItem = $(".template-2 .item").clone();
@@ -330,14 +332,16 @@ $(document).ready(function() {
 
     // Funzione per aggiungere nuovo contatto con Handlebars
 
-    function addContact(nm) {
+    function addContact(nm, conv) {
+
       var infoNuovoContatto = {
-        nome: nm
+        nome: nm,
+        itemId: conv
       };
+
       var templateCompiled = templateItem(infoNuovoContatto);
       $(".left .contatti").append(templateCompiled);
     }
-
 
   // Fine parte delle FUNZIONI
 
