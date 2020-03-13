@@ -329,10 +329,6 @@ $(document).ready(function() {
 
 
     // Funzione per aggiungere nuovo contatto con Handlebars
-    // DA RIPETERE SOLO UNA VOLTA
-    var source2 = $("#template-2").html();
-    var templateItem = Handlebars.compile(source2);
-    // DA RIPETERE SOLO UNA VOLTA
 
     function addContact(nm) {
       var infoNuovoContatto = {
