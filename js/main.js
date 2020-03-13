@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+  // DA RIPETERE SOLO UNA VOLTA ==> serve per la funzione messageGenerator()
+  var source = $("#template").html();
+  var template = Handlebars.compile(source);
+  // DA RIPETERE SOLO UNA VOLTA
+
+  // DA RIPETERE SOLO UNA VOLTA ==> serve per la funzione addContact()
+  var source2 = $("#template-2").html();
+  var templateItem = Handlebars.compile(source2);
+  // DA RIPETERE SOLO UNA VOLTA
+
   // Scroll down automatico
     scroll(".main.active");
   // Fine scroll down automatico
@@ -76,6 +86,107 @@ $(document).ready(function() {
       });
     });
   // Fine selezione CONVERSAZIONI
+
+
+  // "DATABASE" messaggi iniziali
+    var databaseMessaggi = {
+      c0: [
+        {
+          text: "Ciao Samuele tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c1: [
+        {
+          text: "Ciao Fabio tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c2: [
+        {
+          text: "Ciao Riccardo tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c3: [
+        {
+          text: "Ciao Marco tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c4: [
+        {
+          text: "Ciao Giorgio tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c5: [
+        {
+          text: "Ciao Paolo tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c6: [
+        {
+          text: "Ciao Francesco tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ],
+      c7: [
+        {
+          text: "Ciao Nicola tutto bene?",
+          direction: "sent"
+        },
+        {
+          text: "Si dai non c'é male",
+          direction: "received"
+        }
+      ]
+    };
+
+    for (var key in databaseMessaggi) {
+      var numeroConversazione = key[1];
+      for (var i = 0; i < key.length; i++) {
+        // console.log(databaseMessaggi[key][i].text);
+        var messaggio = databaseMessaggi[key][i].text;
+        // console.log(messaggio);
+        var sentOReceived = databaseMessaggi[key][i].direction;
+        // console.log(sentOReceived);
+        var conversazione = $(".main[data-conversazione='" + numeroConversazione + "']");
+        // console.log(conversazione);
+        messageGenerator(messaggio, sentOReceived, conversazione);
+
+      }
+    }
+  // Fine "DATABASE" messaggi iniziali
 
 
   // Ricerca MESSAGGI
@@ -161,10 +272,10 @@ $(document).ready(function() {
       // console.log(messaggioInserito);
       if (messaggioInserito.trim().length > 0) {
         $("#msg").val("");
-        messageGenerator(messaggioInserito, "sent");
+        messageGenerator(messaggioInserito, "sent", ".main.active");
         scroll(".main.active");
         setTimeout(function() {
-          messageGenerator("ok", "received");
+          messageGenerator("ok", "received", ".main.active");
           scroll(".main.active");
         }, 1000);
       }
@@ -174,19 +285,14 @@ $(document).ready(function() {
 
     // HANDLEBARS
 
-    // DA RIPETERE SOLO UNA VOLTA
-    var source = $("#template").html();
-    var template = Handlebars.compile(source);
-    // DA RIPETERE SOLO UNA VOLTA
-
-    function messageGenerator(text, sentReceived) {
+    function messageGenerator(text, sentReceived, corrispondenza) {
       var infoMessaggio = {
         direzione: sentReceived,
         messaggio: text,
         ora: new Date().getHours() + ":" + new Date().getMinutes()
       };
       var templateCompiled = template(infoMessaggio);
-      $(".main.active").append(templateCompiled);
+      $(corrispondenza).append(templateCompiled);
     }
     // HANDLEBARS
 
