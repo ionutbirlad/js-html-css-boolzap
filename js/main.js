@@ -355,7 +355,7 @@ $(document).ready(function() {
       };
       var templateCompiled = templateItem2(infoNuovaChat);
       // $(".right").append(templateCompiled);
-      $(templateCompiled).insertAfter($(".right .main"));
+      $(templateCompiled).insertAfter($(".right .main").last());
     }
 
   // Fine parte delle FUNZIONI
